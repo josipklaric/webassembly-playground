@@ -21,13 +21,13 @@ namespace DotnetWasm
                         {
                             Console.WriteLine("Calling methods exported by WebAssembly...");
 
-                            Console.WriteLine($"main: {instance.main()}");
-                            Console.WriteLine($"add: {instance.add(7, 6)}");
+                            Console.WriteLine($"Result of main: {instance.main()}");
+                            Console.WriteLine($"Result of add: {instance.add(7, 6)}");
 
                             var pointer = instance.greet();
                             var memory = instance.Externs.Memories[0];
                             var greetMessage = memory.ReadNullTerminatedString(pointer);
-                            Console.WriteLine($"greet: {greetMessage}");
+                            Console.WriteLine($"Result of greet: {greetMessage}");
                         }
                     }
                 }
